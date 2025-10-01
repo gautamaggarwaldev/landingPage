@@ -49,8 +49,22 @@ const HolisticHealingSection = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-white rounded-full px-6 py-3 shadow-sm mb-4 border border-green-100">
-            <span className="text-green-600 text-xl">💚</span>
-            <span className="text-green-600 font-semibold text-sm uppercase tracking-wide">
+            <span className="text-green-600 text-xl">
+              <svg
+                fill="#4caf50"
+                width="25px"
+                height="20px"
+                viewBox="0 0 15 15"
+                version="1.1"
+                id="heart"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.91,6.75c-1.17,2.25-4.3,5.31-6.07,6.94c-0.1903,0.1718-0.4797,0.1718-0.67,0C5.39,12.06,2.26,9,1.09,6.75&#xA;&#x9;C-1.48,1.8,5-1.5,7.5,3.45C10-1.5,16.48,1.8,13.91,6.75z"
+                />
+              </svg>
+            </span>
+            <span className="text-[#4caf50] font-extrabold text-sm uppercase tracking-wide">
               WHY CHOOSE US
             </span>
           </div>
@@ -70,8 +84,8 @@ const HolisticHealingSection = () => {
           </h2>
           <p className="text-gray-500 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
             Experience the profound benefits of our integrated approach to
-            wellness, combining <br/> ancient wisdom with modern understanding to
-            create lasting positive change.
+            wellness, combining <br /> ancient wisdom with modern understanding
+            to create lasting positive change.
           </p>
         </div>
 
@@ -160,5 +174,3 @@ const HolisticHealingSection = () => {
 };
 
 export default HolisticHealingSection;
-
-

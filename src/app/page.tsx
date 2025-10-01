@@ -1,4 +1,6 @@
 // app/page.tsx
+import ContactCTASection from '@/components/ContactCTASection';
+import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import HolisticHealingSection from '@/components/HolisticHealingSection';
@@ -13,6 +15,8 @@ export default function Home() {
       <WellnessPrograms />
       <HolisticHealingSection />
       <RetreatSection />
+      <ContactCTASection />
+      <Footer />
     </div>
   );
 }

@@ -1,4 +1,3 @@
-// components/Header.tsx
 "use client";
 
 import { useState } from "react";
@@ -16,45 +15,40 @@ const Header = () => {
   ];
 
   return (
-    <header className="w-full bg-white shadow-sm py-8 px-6 border-b font-sans">
-      <div className="max-w-7xl mx-auto">
+    <header className="w-full bg-white border-b border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 py-5">
         <div className="flex justify-between items-center">
           {/* Logo on the left */}
-          <div className="flex items-center">
-            {/* Logo Image - Increased size */}
-
-            <Link href="/" className="text-3xl">
-              <div className="w-40 h-16 mr-4 relative">
-                <Image
-                  src="/logobg.png" // Replace with your logo path
-                  alt="Traveon Logo"
-                  width={160}
-                  height={64}
-                  className="object-contain w-full h-full"
-                />
-              </div>
-            </Link>
-          </div>
+          <Link href="/" className="flex-shrink-0 -ml-2">
+            <div className="w-60 h-24 relative">
+              <Image
+                src="/fl.avif"
+                alt="Retreats by Traveon Logo"
+                width={240}
+                height={96}
+                className="object-contain w-full h-full"
+                priority
+              />
+            </div>
+          </Link>
 
           {/* Desktop Navigation - hidden on mobile */}
-          <div className="hidden md:flex items-center space-x-10">
+          <div className="hidden md:flex items-center space-x-8 font-semibold">
             {/* Navigation Links */}
-            <div className="flex items-center space-x-10">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium text-lg"
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-gray-700 hover:text-green-600 transition-colors duration-200 text-base font-normal"
+              >
+                {item.name}
+              </Link>
+            ))}
 
             {/* Book a Retreat Button */}
             <Link
               href="/book"
-              className="bg-green-600 text-white px-8 py-4 rounded-md hover:bg-green-700 transition-colors duration-200 font-medium text-lg"
+              className="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors duration-200 text-base ml-4 font-extrabold"
             >
               Book a Retreat
             </Link>
@@ -62,24 +56,37 @@ const Header = () => {
 
           {/* Mobile menu button - hidden on desktop */}
           <button
-            className="md:hidden p-3 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors duration-200"
+            className="md:hidden p-2 hover:bg-gray-100 rounded-md transition-colors duration-200 font-semibold"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
           >
-            <div className="w-6 h-0.5 bg-gray-600 mb-1.5"></div>
-            <div className="w-6 h-0.5 bg-gray-600 mb-1.5"></div>
-            <div className="w-6 h-0.5 bg-gray-600"></div>
+            <svg
+              className="w-6 h-6 text-gray-600"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              {isMenuOpen ? (
+                <path d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
           </button>
         </div>
 
         {/* Mobile Menu - Only shown when hamburger is clicked */}
         {isMenuOpen && (
-          <div className="md:hidden mt-6 py-6 border-t border-gray-200 bg-white font-sans">
-            <div className="flex flex-col space-y-6">
+          <div className="md:hidden mt-4 py-4 border-t border-gray-200">
+            <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium py-2 text-lg"
+                  className="text-gray-700 hover:text-green-600 transition-colors duration-200 py-2 text-base"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -87,7 +94,7 @@ const Header = () => {
               ))}
               <Link
                 href="/book"
-                className="bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 transition-colors duration-200 text-center font-medium text-lg mt-4"
+                className="bg-green-500 text-white px-6 py-2.5 rounded-lg hover:bg-green-600 transition-colors duration-200 text-center text-base mt-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Book a Retreat
