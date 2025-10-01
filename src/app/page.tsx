@@ -1,19 +1,18 @@
 // app/page.tsx
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import HolisticHealingSection from '@/components/HolisticHealingSection';
+import RetreatSection from '@/components/RetreatSection';
+import WellnessPrograms from '@/components/WellnessPrograms';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
       <Hero />
-      
-      {/* Add other sections below */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          {/* Your next sections go here */}
-        </div>
-      </section>
+      <WellnessPrograms />
+      <HolisticHealingSection />
+      <RetreatSection />
     </div>
   );
 }
